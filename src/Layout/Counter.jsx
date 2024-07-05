@@ -4,17 +4,21 @@ export default class Counter extends React.Component{
    
     constructor(props){
         super(props);
-        this.state ={
+        this.handleAttack = this.handleAttack.bind(this);//bind onlick event to attack method
+        this.handleDefence = this.handleDefence.bind(this);//bind onlick event to attack method
+        this.state ={// state is imutable and cannot be modified directly 
             count:0
         }
     }
 
    handleAttack(){
-    alert("Attack clicked");
+   // alert("Attack clicked");
+    this.setState({count: this.state.count +1})// modify state
    }
       
    handleDefence(){
-    alert("Defend clicked");
+    //alert("Defend clicked");
+    this.setState({count: this.state.count -1})// modify state
    }
    
   
